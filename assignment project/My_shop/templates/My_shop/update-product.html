@@ -1,0 +1,84 @@
+﻿{% extends 'My_shop/profile.html' %}
+
+{% block content %}
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+            <form action= "{% url 'update-products' product_details.id %}" method="POST" enctype="multipart/form-data"> 
+            {% csrf_token %}   
+                <h2>Edit Products <small class="text-muted">Welcome to My_shop</small></h2>
+            </div>            
+            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                
+            <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                        <i class="zmdi zmdi-plus"></i>
+                    </button>
+                
+                
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i>My_shop</a></li>
+                    <li class="breadcrumb-item"> My products</li>
+                                                                                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">                
+        
+
+        <div class="body">
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Product ID " value="{{product_details.productid}}" name="productid">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Product Name" value="{{product_details.productname}}" name="itemname">
+
+                                  
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Product Price" value="{{product_details.productprice}}" name="price">
+                    </div>
+                </div>
+       
+                    
+                
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Product Model Name"value="{{product_details.productmodel}}" name="modelname">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Product RAM" value="{{product_details.productram}}" name="ramsize">
+                        </div>
+                    </div>
+                </div>      
+            </div>
+         
+         
+                
+                <div>
+                    <input type="submit" class="btn btn-primary btn-round"  value="UPDATE">
+                    
+                </div>
+                {% if s_msg %}
+                    <div class="alert alert-primary" role="alert">
+                        {{s_msg}}
+                    </div>
+                {% endif %}  
+            </div>
+
+        </div>
+    </div>
+</form>
+</div>
+</div>
+{% endblock %}

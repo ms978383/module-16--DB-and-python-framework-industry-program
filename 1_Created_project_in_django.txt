@@ -1,0 +1,24 @@
+Q. Why Django should be used for web-development ?
+Answer: Django is the best framework for web applications, as it allows developers to use modules for faster development. As a developer, you can make use of these modules to create apps, websites from an existing source. It speeds up the development process greatly, as you do not have to code everything from scratch.
+Django offers a highly secure approach to develop web applications as it prevents attacks like XSS(Cross-Site Scripting), CSRF (Cross-Site Request Forgery), SQL injection,etc .
+
+Q.Explain How you can create a project ?
+Answer:
+Create New Project in Django
+
+-Open VS code:-
+
+1.Create New folder
+2.Open terminal > create a environment (syntax : python -m venv env ) > env is created 
+3.Activate environment > (syntax : env\Scripts\activate)
+4.Install Django in your environment > (syntax : pip install django)
+5.Created Project > (syntax : django-admin startproject (name of project e.g.: Myproject) ) > project is created
+6.Created App > (syntax : django-admin startapp (name of app e.g.: Myapp)) > App is created
+7.Then add your app in ,  Installed  apps in  , My project's Settings.
+8.Created app urls.py
+9.Then add My app > urls.py in > My Project urls.py
+10.after this statement , you can show your app in Browser > (Type syntax in Terminal > (syntax : Python manage.py runserver)
+
+
+
+

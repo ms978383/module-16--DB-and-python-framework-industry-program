@@ -1,0 +1,45 @@
+Q.5. What is Query Set ? Write program to create a new post object in database ?
+Answer :  A QuerySet is a collection of data from a database.
+
+                   A QuerySet is built up as a list of objects.
+
+                   QuerySets makes it easier to get the data you actually need, by allowing you to filter and order the data at an early stage.
+
+                   In this tutorial we will be querying data from the Member table.
+
+A New Post Objects from a Database :-
+
+Querying Data
+
+ -  In views.py : 
+
+we have a view for testing called testing where we will test different queries.
+
+In the example below we use , the all() method to get all the records and fields of the Member model:
+
+
+views.py:
+
+from django.http import HttpResponse
+from django.template import loader
+from .models import Member
+
+def testing(request):
+         mydata = Member.objects.all()
+        template = loader.get_template('template.html')
+        context = {
+              'mymembers': mydata,
+         }
+        return HttpResponse(template.render(context, request))
+
+The object is placed in a variable called mydata, and is sent to the template via the context object as mymembers, and looks like this:
+
+<QuerySet [
+  <Member: Member object (1)>,
+  <Member: Member object (2)>,
+  <Member: Member object (3)>,
+  <Member: Member object (4)>,
+  <Member: Member object (5)>
+]>
+As you can see, our Member model contains 5 records, and are listed inside the QuerySet as 5 objects.
+

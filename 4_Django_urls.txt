@@ -1,0 +1,24 @@
+Q.4. What is Django urls? make program to create django urls?
+Answer : 
+ Django url :-A URL is a web address. For example, codespeedy.com is also a URL. In Django, we use URLconf, which is a set of patterns                          that Django will try to match the requested URL to find the correct view.
+
+Creating a url :-
+
+The path method allows returning of an element to be included in URL patterns tuple which will be used as an url pattern. This was introduced in Django version 2.0 along with the re_path() method.
+
+Syntax  :           path(route, view, kwargs=None, name=None)
+
+Example of urls.py:-
+
+
+from django.contrib import admin
+from django.conf.urls import url,include
+from django.urls import path
+from Django_app1 import views,include
+
+urlpatterns = [
+
+path('admin/','admin.site.urls'),
+path(' ',include('Django_app1.urls'))
+
+]
